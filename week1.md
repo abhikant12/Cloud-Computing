@@ -265,10 +265,6 @@ Client-server architecture is a network design where:
 
 ---
 
-iturn0image0turn0image1turn0image3turn0image6Certainly! Here are concise notes on the specified cloud computing topics, aligned with the NPTEL syllabus for the Cloud Computing course offered by IIT Kharagpur:
-
----
-
 ## 🖥️ Client-Server Model vs. Cloud Model
 
 **Client-Server Model**:
@@ -328,3 +324,10 @@ Client-server architecture is a network design where:
 - Enhances flexibility, scalability, and cost-efficiency in network managment.
 
 ---
+---
+---
+
+3,4,5,7-12, 
+16,20-22,24,25,26,29,30,31,32,35,37,41,
+43,48,50 , 51-57,60,66,
+
