@@ -1,12 +1,4 @@
 
-
-2,3,9,10,21,32,39,42,43,45,46,47,49,50,51-53,56,57,60,62,65,81-82,85,87,88-93,97,
-
-(till 100)
-
-
----
------
 ***XML
 
 - **Whitespace Characters**: XML defines which characters count as whitespace (e.g., space, tab, newline). Characters like **EBCDIC 'NEL'** are **not valid** as whitespace and should be avoided.
