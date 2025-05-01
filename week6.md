@@ -383,7 +383,26 @@
 - Define **customer service classes**.
 
 ---
+---
 
+### 🔐 **Types of Attacks:**
+
+#### ✅ **Passive Attacks**
+- **Goal:** Eavesdropping or monitoring transmissions.
+- **No modification** is made to the data.
+- **Examples:**
+  - **Traffic Analysis** – observing communication patterns (e.g., who is talking to whom, when).
+  - **Release of Message Contents** – reading actual messages without altering them.
+
+#### 🚫 **Active Attacks**
+- **Goal:** Altering the data stream or creating false data.
+- Involve **modification**, **interruption**, or **fabrication**.
+- **Examples:**
+  - **Denial of Service (DoS)** – disrupting availability of resources.
+  - **Replay Attack** – capturing and retransmitting data to impersonate or repeat actions.
+
+---
+---
 
 
 
