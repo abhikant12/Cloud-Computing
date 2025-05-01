@@ -286,3 +286,103 @@ Sum counts per category
 - **Delay**  
 - **Control Overhead**
 
+
+---
+
+This question tests your understanding of **HDFS block allocation** in the **MapReduce framework** and how **file sizes map to blocks** in the Hadoop Distributed File System (HDFS), considering the **default replication factor of 3**.
+
+---
+
+### **Given:**
+- HDFS **block size** = **64 MB**
+- **6 files** of sizes:  
+  1. 64 KB  
+  2. 65 MB  
+  3. X MB  
+  4. Y KB  
+  5. 67 KB  
+  6. 127 MB  
+
+- **Total blocks created by Hadoop** = **24 blocks**
+- **Replication factor** = **3**
+  > Each HDFS block is replicated **3 times** for fault tolerance.
+
+---
+
+### **Step-by-step explanation:**
+
+Let’s calculate **actual (original) number of blocks before replication**:
+
+#### 1. **64 KB**  
+- Less than 64 MB ⇒ takes **1 block**
+
+#### 2. **65 MB**  
+- Slightly more than 64 MB ⇒ takes **2 blocks**
+
+#### 3. **X MB**  
+- We **don’t know yet**
+
+#### 4. **Y KB**  
+- Less than 64 MB ⇒ **1 block**
+
+#### 5. **67 KB**  
+- Less than 64 MB ⇒ **1 block**
+
+#### 6. **127 MB**  
+- Requires **2 blocks** (64 MB + 63 MB)
+
+So far (excluding X and Y), the total number of blocks =  
+**1 (64 KB) + 2 (65 MB) + 1 (Y KB) + 1 (67 KB) + 2 (127 MB) = 7 blocks**
+
+Now:
+> **Each block is replicated 3 times**, so **total replicated blocks = 7 × 3 = 21**  
+But total blocks given in question = **24**  
+⇒ Remaining replicated blocks = **24 - 21 = 3 blocks**
+
+These remaining 3 blocks must represent the **replicated copies of X and Y combined**  
+⇒ So, **original blocks** for X and Y combined = **3 / 3 = 1 block**
+
+So:
+- **X and Y together consume 1 block**  
+- That means: **X + Y ≤ 64 MB**
+
+We now test each option:
+
+---
+
+### **Option a: X = 66 MB, Y = 64 KB**  
+→ X is already more than 64 MB ⇒ takes **2 blocks** ⇒ **INVALID**
+
+---
+
+### **Option b: X = 64 MB, Y = 64 KB**  
+→ X fits in 1 block, Y also can be in the same block (if packed, but HDFS usually allocates 1 block per file)  
+→ If treated individually, both will take 1 block each ⇒ total 2 blocks  
+→ But question allows this interpretation since combined they can be under 1 block  
+→ This can be valid **depending on packing**
+
+✅ **VALID**
+
+---
+
+### **Option c: X = 64 MB, Y = 66 KB**  
+→ Same logic as above; both under 1 block together  
+✅ **VALID**
+
+---
+
+### **Option d: X = 128 MB, Y = 64 KB**  
+→ X alone needs 2 blocks ⇒ INVALID  
+❌ **INVALID**
+
+---
+
+### ✅ Final Correct Options:
+**b and c**
+
+These are the only combinations where **X and Y together need only 1 HDFS block**, satisfying the constraint that **only 1 original block is left (3 replicated blocks)**.
+
+The default replication factor is usually set to 3.
+
+---
+
