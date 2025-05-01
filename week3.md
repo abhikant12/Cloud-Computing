@@ -1,4 +1,3 @@
-2-4,6-
 
 
 ---
@@ -407,4 +406,131 @@ Here are concise and exam-focused notes based on your content, ideal for NPTEL M
 - **Keystone**: Issues auth tokens
 
 ---
+---
 
+### **Q1: Which of the following is/are NOT SLA requirements of PaaS cloud delivery model?**  
+✅ **Correct Answers: b, c**
+
+#### a. **Privacy** – ❌ *Wrong to mark this as NOT required*: Privacy is a valid SLA concern across all delivery models including PaaS.
+
+#### b. **Data Retention and Deletion** – ✅ *Correct*: These are more related to legal/data governance, not standard SLA metrics for PaaS.
+
+#### c. **Machine-Readable SLAs** – ✅ *Correct*: This is a nice-to-have or future-focused feature, not typically part of standard SLAs.
+
+#### d. **Certification** – ❌ *Wrong to mark as NOT required*: Certifications ensure compliance and are often included in SLA frameworks.
+
+---
+
+### **Q2: Which of the following is/are true regarding penalty cost?**  
+✅ **Correct Answers: b, d**
+
+#### a. **Penalty cost ∫[D(t)–R(t)]dt** – ❌ This is a general formula but lacks proper context (flat/exponential demand not defined).
+
+#### b. **If demand is flat, penalty is equal to 0** – ✅ *Correct*: If resources exactly match a constant demand, the penalty can be zero.
+
+#### c. **If demand is exponential, fixed provisioning will lead to linear penalty** – ❌ Incorrect: Exponential growth with fixed provisioning leads to **exponential** penalty, not linear.
+
+#### d. **The penalty cost for exponential demand is exponential** – ✅ *Correct*: Due to the nature of exponential functions.
+
+---
+
+### **Q3: Row-oriented storage is efficient for data-warehouse workloads.**  
+✅ **Correct Answer: b (FALSE)**
+
+#### a. **TRUE** – ❌ Incorrect: Data warehouses benefit from **columnar** storage for analytical queries.
+
+#### b. **FALSE** – ✅ Correct: Row-oriented storage is better for transactional workloads (OLTP), not OLAP/data warehouses.
+
+---
+
+### **Q4: Which of the following is/are example(s) of cloud SLA(s) with IaaS delivery model?**  
+✅ **Correct Answer: a**
+
+#### a. **Amazon EC2** – ✅ *Correct*: It's an IaaS provider with compute SLA.
+
+#### b. **Google App Engine** – ❌ PaaS model, not IaaS.
+
+#### c. **Salesforce CRM** – ❌ SaaS.
+
+#### d. **Zoho Mail** – ❌ SaaS.
+
+---
+
+### **Q5: Which OpenStack component is used for block storage services?**  
+✅ **Correct Answer: b**
+
+#### a. **Keystone** – ❌ Used for identity/authentication.
+
+#### b. **Cinder** – ✅ *Correct*: Manages block storage in OpenStack.
+
+#### c. **Swift** – ❌ Object storage service.
+
+#### d. **Neutron** – ❌ Network management service.
+
+---
+
+### **Q6: In cloud, service downtime is 30 minutes and availability is 0.80. What is the service uptime?**  
+✅ **Correct Answer: c (150 minutes total)**
+
+#### Logic:  
+Availability = uptime / total time  
+0.8 = (T – 30) / T → T = 150 minutes
+
+#### a. 120 min – ❌ Incorrect  
+#### b. 60 min – ❌ Incorrect  
+#### c. 150 min – ✅ Correct  
+#### d. 135 min – ❌ Incorrect
+
+---
+
+### **Q7: In Google File System (GFS), the master maintains regular communication with the chunk servers.**  
+✅ **Correct Answer: a (TRUE)**
+
+#### a. **TRUE** – ✅ Correct: The GFS master maintains periodic communication (heartbeats) to track chunkservers.
+
+#### b. **FALSE** – ❌ Incorrect.
+
+---
+
+### **Q8: What is/are the expected SLA parameters for SaaS?**  
+✅ **Correct Answers: a, b, d**
+
+#### a. **Reliability** – ✅ Important for consistent service.
+
+#### b. **Usability** – ✅ Key for user-facing apps in SaaS.
+
+#### c. **Cache Memory Size** – ❌ Not an SLA parameter; it's a low-level system design metric.
+
+#### d. **Customizability** – ✅ Often required for different client needs.
+
+---
+
+### **Q9: Which of the following option(s) is/are correct?**  
+✅ **Correct Answers: a, d**
+
+#### a. **SLA contains SLO** – ✅ Correct hierarchy.
+
+#### b. **SLO contains SLA** – ❌ Incorrect; reversed relationship.
+
+#### c. **SLAs are aggregated to KPIs** – ❌ Incorrect; KPIs measure SLA adherence, not the other way.
+
+#### d. **KPIs are aggregated to SLOs** – ✅ Correct; KPIs are used to track if SLOs are met.
+
+---
+
+### **Q10: OpenStack storage behavior (ephemeral vs. block)**  
+✅ **Correct Answer: c**
+
+#### Statement 1: In OpenStack block storage, the stored objects persist until VM is terminated.  
+- ❌ Incorrect: Block storage is independent of VM life.
+
+#### Statement 2: In OpenStack ephemeral storage, stored objects are accessible from VM as local file system.  
+- ✅ Correct: Ephemeral storage is **temporary** and attached to the VM lifecycle.
+
+#### Options:
+- a. Both correct – ❌  
+- b. 1 correct – ❌  
+- c. 2 correct – ✅  
+- d. Both wrong – ❌  
+
+---
